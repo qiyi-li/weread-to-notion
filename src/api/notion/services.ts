@@ -285,6 +285,15 @@ export async function writeBookToNotion(
               }
             : null,
         },
+        最近阅读: {
+          date: bookData.progressData?.startReadingTime
+            ? {
+                start: new Date(bookData.progressData.updateTime * 1000)
+                  .toISOString()
+                  .split("T")[0],
+              }
+            : null,
+        },
         // 完成阅读日期 - 如果有finishTime则转换为可读日期
         完成阅读: {
           date: bookData.progressData?.finishTime

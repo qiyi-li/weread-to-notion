@@ -32,7 +32,6 @@ export async function syncAllBooks(
 
     // 获取笔记本中的书籍（有划线的书籍）
     const notebookBooks = await getNotebookBooks(cookie);
-
     // 合并书籍元数据
     const mergedBooks = await enhanceBookMetadata(
       cookie,
@@ -110,7 +109,7 @@ export async function syncAllBooks(
         finalPageId,
         book,
         useIncremental,
-        false // 默认不按章节组织
+        true // 默认不按章节组织
       );
 
       // 检查是否有真正的更新
